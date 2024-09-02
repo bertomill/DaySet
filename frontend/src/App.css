@@ -9,16 +9,35 @@ body {
   color: #333;
 }
 
+/* Header styling */
+.header {
+  display: flex;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #00263b; /* Dark blue background for the header */
+  color: white;
+}
+
+/* DaySet Title Styling */
+.app-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, #005f73, #9b2226); /* Gradient from blueish to orange */
+  -webkit-background-clip: text;
+  color: transparent;
+  margin: 0;
+}
+
 .App {
   text-align: center;
   padding: 20px;
 }
 
-/* Header styling */
-h1 {
-  font-size: 2.5rem;
-  margin: 20px 0;
-  color: #222;
+/* Section styling */
+section {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 h2 {
@@ -34,16 +53,18 @@ form {
   align-items: center;
   margin: 20px auto;
   padding: 20px;
-  max-width: 500px;
+  max-width: 100%;
   background-color: white;
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Input, select, and textarea styling */
 input[type="text"], select, textarea {
-  width: 100%;
+  width: 80%; /* Default width for larger screens */
   padding: 10px;
   margin: 10px 0;
   border: 1px solid #ddd;
@@ -89,16 +110,20 @@ button:hover {
 
 /* Media queries for responsiveness */
 @media (max-width: 600px) {
-  h1 {
-      font-size: 2rem;
+  .app-title {
+      font-size: 1.5rem;
   }
-  
+
+  input[type="text"], select, textarea {
+      width: 95%; /* Full width for smaller screens */
+  }
+
   h2 {
       font-size: 1.75rem;
   }
 
   form {
-      max-width: 90%;
+      max-width: 100%;
       padding: 15px;
   }
 }
