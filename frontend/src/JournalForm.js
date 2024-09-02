@@ -34,8 +34,8 @@ function JournalForm() {
       if (response.ok) {
         const createdPrompt = await response.json();
         setNewPromptTitle('');
-        setPrompts([...prompts, createdPrompt.prompt]); // Update the list with the new prompt
-        setResponses({ ...responses, [createdPrompt.prompt.id]: '' }); // Initialize response field for the new prompt
+        setPrompts([...prompts, createdPrompt.prompt]);
+        setResponses({ ...responses, [createdPrompt.prompt.id]: '' });
         alert('Prompt created successfully!');
       } else {
         alert('Failed to create prompt.');
@@ -74,7 +74,7 @@ function JournalForm() {
   };
 
   return (
-    <div>
+    <div className="journal-form-container">
       <h1>Create Journal Prompt</h1>
       <form onSubmit={handleCreatePrompt}>
         <input
